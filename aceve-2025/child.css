@@ -1,0 +1,14 @@
+/* Font */
+* {
+  letter-spacing: -0.01em;
+  font-weight: 500!important;
+}
+
+/* Contact persons */
+
+
+@media (min-width: 1140px) {
+    .contact-persons  .img-txt--it .img-txt__col--txt .img-txt__col-content {
+        padding-inline-start: 30px;
+    }
+}

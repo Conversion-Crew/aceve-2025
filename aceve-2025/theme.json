@@ -1,0 +1,24 @@
+{
+  "label" : "Aceve 2025 by Conversion Crew",
+  "preview_path" : "./templates/home-1.html",
+  "screenshot_path" : "./images/template-previews/cover-cc.png",
+  "enable_domain_stylesheets" : false,
+  "is_available_for_new_content" : true,
+  "extends" : "@marketplace/Neambo/Act3",
+  "responsive_breakpoints" : [ {
+    "mediaQuery" : "@media (max-width: 767px)",
+    "messages" : { },
+    "name" : "mobile",
+    "previewWidth" : {
+      "units" : "px",
+      "value" : 479
+    }
+  } ],
+  "version" : "41",
+  "author" : {
+    "name" : "",
+    "email" : ""
+  },
+  "license" : "./license.txt",
+  "hide_all_default_modules" : false
+}
