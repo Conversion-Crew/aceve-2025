@@ -1,0 +1,1365 @@
+[
+  {
+    "label": "Color",
+    "name": "color",
+    "type": "group",
+    "children": [
+      {
+        "label": "Accent color",
+        "name": "accent_color",
+        "id": "accent_color_type",
+        "type": "choice",
+        "display": "radio",
+        "choices": [
+          ["solid", "Solid"],
+          ["gradient", "Gradient"]
+        ],
+        "default": "gradient"
+      },
+      {
+        "label": "Solid Accent (Primary color)",
+        "name": "accent",
+        "alternate_names": ["primary_color"],
+        "type": "color",
+        "inline_help_text": "This will be your theme's <b>Accent color</b> if you select <b>Solid</b> above, and it's also the <b>Primary color</b> for external modules. By default, it inherits the <b>Primary color</b> from your <b>Branding</b> settings.",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.primaryColor"
+          }
+        },
+        "default": {
+          "color": "#F65954",
+          "opacity": 100
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Gradient start",
+        "name": "gradient_start",
+        "type": "color",
+        "default": {
+          "color": "#F5693F"
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "gradient",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Gradient end",
+        "name": "gradient_end",
+        "type": "color",
+        "default": {
+          "color": "#F53F71"
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "gradient",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Gradient fallback",
+        "name": "gradient_fallback",
+        "type": "color",
+        "inline_help_text": "A solid color for CSS properties that don't support gradients. Usually the mid color between the gradient's start and end colors.",
+        "default": {
+          "color": "#F65954"
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "gradient",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Secondary color",
+        "name": "secondary",
+        "alternate_names": ["secondary_color"],
+        "type": "color",
+        "inline_help_text": "Used as the <b>Secondary color</b> for external modules. By default, it inherits the second color from your <b>Branding</b> settings.",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[1]"
+          }
+        },
+        "default": {
+          "color": "#2BBAD6",
+          "opacity": 100
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Tertiary color",
+        "name": "tertiary",
+        "type": "color",
+        "inline_help_text": "Used as the <b>Tertiary color</b> for external modules. By default, it inherits the third color from your <b>Branding</b> settings.",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[2]"
+          }
+        },
+        "default": {
+          "color": "#FFA501",
+          "opacity": 100
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Dark gray",
+        "name": "dark",
+        "type": "color",
+        "default": {
+          "color": "#222326"
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Light gray",
+        "name": "light",
+        "type": "color",
+        "default": {
+          "color": "#F8F9FB"
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Borders",
+        "name": "borders",
+        "type": "color",
+        "default": {
+          "color": "#E3E6EC"
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Text",
+        "name": "text",
+        "type": "color",
+        "default": {
+          "color": "#6A6D77"
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Headings",
+        "name": "headings",
+        "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.color.dark.color"
+          }
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Links",
+        "name": "links_if_accent_gradient",
+        "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.color.gradient_fallback.color"
+          }
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "gradient",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Links",
+        "name": "links_if_accent_solid",
+        "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.color.accent.color"
+          }
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "solid",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Links hover",
+        "name": "links_hover_if_accent_gradient",
+        "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.color.gradient_fallback.color"
+          }
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "gradient",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "Links hover",
+        "name": "links_hover_if_accent_solid",
+        "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.color.accent.color"
+          }
+        },
+        "visibility": {
+          "controlling_field": "accent_color_type",
+          "controlling_value_regex": "solid",
+          "operator": "EQUAL",
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      },
+      {
+        "label": "White text opacity",
+        "name": "white_text_opacity",
+        "type": "number",
+        "display": "slider",
+        "min": 50,
+        "default": 80
+      }
+    ]
+  },
+  {
+    "label": "Typography",
+    "name": "typography",
+    "type": "group",
+    "children": [
+      {
+        "label": "Fonts",
+        "name": "fonts",
+        "type": "group",
+        "children": [
+          {
+            "label": "Use external fonts",
+            "name": "external_fonts",
+            "id": "external_fonts",
+            "type": "boolean",
+            "help_text": "Learn how to set up external fonts by following the instructions <a href='https://neambo.com/support/act3/how-to-use-external-fonts'>here ↗</a>.",
+            "default": false
+          },
+          {
+            "label": "Text",
+            "name": "text_font",
+            "alternate_names": ["body_font"],
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "regular",
+              "fallback": "sans-serif"
+            },
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.color.text.color"
+              }
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          },
+          {
+            "label": "Text > Bold",
+            "name": "strong_font",
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "600",
+              "fallback": "sans-serif"
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          },
+          {
+            "label": "Headings",
+            "name": "headings_font",
+            "alternate_names": ["heading_font"],
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "600",
+              "fallback": "sans-serif"
+            },
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.color.headings.color"
+              }
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          },
+          {
+            "label": "Headings > Bold",
+            "name": "headings_strong_font",
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "600",
+              "fallback": "sans-serif"
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          },
+          {
+            "label": "UI",
+            "name": "ui_font",
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "500",
+              "fallback": "sans-serif"
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          },
+          {
+            "label": "UI > Bold",
+            "name": "ui_strong_font",
+            "type": "font",
+            "default": {
+              "font": "Jost",
+              "font_set": "GOOGLE",
+              "variant": "600",
+              "fallback": "sans-serif"
+            },
+            "visibility": {
+              "hidden_subfields": {
+                "color": true,
+                "underline": true,
+                "size": true
+              },
+              "controlling_field": "external_fonts",
+              "controlling_value_regex": false,
+              "operator": "EQUAL"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Text",
+        "name": "text",
+        "type": "group",
+        "children": [
+          {
+            "label": "Font size",
+            "name": "size",
+            "type": "group",
+            "expanded": true,
+            "children": [
+              {
+                "label": "Large screens (px)",
+                "name": "lg",
+                "type": "number",
+                "display": "slider",
+                "min": 8,
+                "max": 128,
+                "step": 1,
+                "default": 18,
+                "required": true
+              },
+              {
+                "label": "Medium screens (px)",
+                "name": "md",
+                "type": "number",
+                "display": "slider",
+                "min": 8,
+                "max": 128,
+                "step": 1,
+                "default": 18,
+                "required": true
+              },
+              {
+                "label": "Small screens (px)",
+                "name": "sm",
+                "type": "number",
+                "display": "slider",
+                "min": 8,
+                "max": 128,
+                "step": 1,
+                "default": 18,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Line height (%)",
+            "name": "height",
+            "type": "number",
+            "display": "slider",
+            "min": 100,
+            "max": 300,
+            "step": 0.01,
+            "default": 155.56,
+            "required": true
+          },
+          {
+            "label": "Large text (%)",
+            "name": "large_text",
+            "type": "number",
+            "display": "slider",
+            "min": 100,
+            "max": 200,
+            "step": 0.01,
+            "default": 122.22,
+            "inline_help_text": "Relative to the default font size.",
+            "required": true
+          },
+          {
+            "label": "Small text (%)",
+            "name": "small_text",
+            "type": "number",
+            "display": "slider",
+            "min": 50,
+            "max": 100,
+            "step": 0.01,
+            "default": 88.89,
+            "inline_help_text": "Relative to the default font size.",
+            "required": true
+          }
+        ]
+      },
+      {
+        "label": "Headings",
+        "name": "headings",
+        "type": "group",
+        "children": [
+          {
+            "label": "Heading 1",
+            "name": "h1",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 56,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 44,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 32,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 114.29,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Heading 2",
+            "name": "h2",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 44,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 36,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 28,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 118.18,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Heading 3",
+            "name": "h3",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 28,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 26,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 24,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 125,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Heading 4",
+            "name": "h4",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 20,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 20,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 20,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 140,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Heading 5",
+            "name": "h5",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 18,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 18,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 18,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 133.33,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Heading 6",
+            "name": "h6",
+            "type": "group",
+            "help_text": "",
+            "inline_help_text": "",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 16,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 16,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 16,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 1,
+                "default": 125,
+                "required": true
+              }
+            ]
+          },
+          {
+            "label": "Display",
+            "name": "display",
+            "type": "group",
+            "children": [
+              {
+                "label": "Font size",
+                "name": "size",
+                "type": "group",
+                "expanded": true,
+                "children": [
+                  {
+                    "label": "Large screens (px)",
+                    "name": "lg",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 72,
+                    "required": true
+                  },
+                  {
+                    "label": "Medium screens (px)",
+                    "name": "md",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 56,
+                    "required": true
+                  },
+                  {
+                    "label": "Small screens (px)",
+                    "name": "sm",
+                    "type": "number",
+                    "display": "slider",
+                    "min": 8,
+                    "max": 128,
+                    "step": 1,
+                    "default": 44,
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "label": "Line height (%)",
+                "name": "height",
+                "type": "number",
+                "display": "slider",
+                "min": 100,
+                "max": 300,
+                "step": 0.01,
+                "default": 111.11,
+                "required": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Links",
+        "name": "links",
+        "type": "group",
+        "children": [
+          {
+            "label": "Underline",
+            "name": "links_underline",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "label": "Hover underline",
+            "name": "links_hover_underline",
+            "type": "boolean",
+            "default": true
+          }
+        ]
+      },
+      {
+        "label": "Word breaking",
+        "name": "word_breaking",
+        "type": "group",
+        "children": [
+          {
+            "label": "Overflow-wrap",
+            "name": "overflow_wrap",
+            "inline_help_text": "For more details about this CSS property and the available options please refer to this article: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap",
+            "type": "choice",
+            "display": "select",
+            "choices": [
+              ["normal", "Normal"],
+              ["anywhere", "Anywhere"],
+              ["break-word", "Break-word"]
+            ],
+            "default": "normal"
+          },
+          {
+            "label": "Hyphens",
+            "name": "hyphens",
+            "inline_help_text": "For more details about this CSS property and the available options please refer to this article: https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens",
+            "type": "choice",
+            "display": "select",
+            "choices": [
+              ["none", "None"],
+              ["manual", "Manual"],
+              ["auto", "Auto"]
+            ],
+            "default": "none"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Layout",
+    "name": "layout",
+    "type": "group",
+    "children": [
+      {
+        "label": "MD",
+        "name": "md",
+        "type": "number",
+        "default": 1139,
+        "locked": true
+      },
+      {
+        "label": "SM",
+        "name": "sm",
+        "type": "number",
+        "default": 767,
+        "locked": true
+      },
+      {
+        "label": "XS",
+        "name": "xs",
+        "type": "number",
+        "default": 479,
+        "locked": true
+      },
+      {
+        "label": "Content width (px)",
+        "name": "content_width",
+        "type": "number",
+        "display": "slider",
+        "min": 900,
+        "max": 1920,
+        "step": 1,
+        "default": 1138,
+        "required": true
+      },
+      {
+        "label": "Vertical space on large screens (px)",
+        "name": "vspace_lg",
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 500,
+        "step": 1,
+        "default": 96,
+        "required": true
+      },
+      {
+        "label": "Vertical space on small screens (px)",
+        "name": "vspace_sm",
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 500,
+        "step": 1,
+        "default": 48,
+        "required": true
+      },
+      {
+        "label": "Gutter (px)",
+        "name": "gutter",
+        "inline_help_text": "Space between columns, cards, rows, text elements, etc.",
+        "type": "number",
+        "display": "slider",
+        "min": 8,
+        "max": 128,
+        "step": 1,
+        "default": 24,
+        "required": true
+      },
+      {
+        "label": "Scroll offset on large screens (px)",
+        "name": "scroll_offset_lg",
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 500,
+        "step": 1,
+        "default": 66,
+        "required": true,
+        "visibility": {
+          "controlling_field": "sticky_header",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        }
+      },
+      {
+        "label": "Scroll offset on medium screens (px)",
+        "name": "scroll_offset_md",
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 500,
+        "step": 1,
+        "default": 66,
+        "required": true,
+        "visibility": {
+          "controlling_field": "sticky_header",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        }
+      },
+      {
+        "label": "Scroll offset on small screens (px)",
+        "name": "scroll_offset_sm",
+        "type": "number",
+        "display": "slider",
+        "min": 0,
+        "max": 500,
+        "step": 1,
+        "default": 66,
+        "required": true,
+        "visibility": {
+          "controlling_field": "sticky_header",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        }
+      }
+    ]
+  },
+  {
+    "label": "Corners",
+    "name": "corners",
+    "type": "group",
+    "children": [
+      {
+        "label": "Global radius",
+        "name": "global_radius",
+        "type": "choice",
+        "display": "select",
+        "required": true,
+        "choices": [
+          ["square", "Square"],
+          ["small", "Small"],
+          ["medium", "Medium"],
+          ["large", "Large"]
+        ],
+        "default": "medium"
+      },
+      {
+        "label": "Button radius",
+        "name": "button_radius",
+        "type": "choice",
+        "display": "select",
+        "required": true,
+        "choices": [
+          ["auto", "Auto"],
+          ["square", "Square"],
+          ["small", "Small"],
+          ["medium", "Medium"],
+          ["large", "Large"]
+        ],
+        "default": "auto"
+      },
+      {
+        "label": "Input radius",
+        "name": "input_radius",
+        "type": "choice",
+        "display": "select",
+        "required": true,
+        "choices": [
+          ["auto", "Auto"],
+          ["square", "Square"],
+          ["small", "Small"],
+          ["medium", "Medium"],
+          ["large", "Large"]
+        ],
+        "default": "auto"
+      },
+      {
+        "label": "Search box radius",
+        "name": "search_box_radius",
+        "type": "choice",
+        "display": "select",
+        "required": true,
+        "choices": [
+          ["auto", "Auto"],
+          ["square", "Square"],
+          ["small", "Small"],
+          ["medium", "Medium"],
+          ["large", "Large"]
+        ],
+        "default": "large"
+      }
+    ]
+  },
+  {
+    "label": "Components",
+    "name": "components",
+    "type": "group",
+    "children": [
+      {
+        "label": "Header",
+        "name": "header",
+        "type": "group",
+        "children": [
+          {
+            "label": "Choose your website header",
+            "name": "default_header",
+            "type": "choice",
+            "default": "header-01.html",
+            "required": true,
+            "choices": [
+              ["header-01.html", "Header 1"],
+              ["header-02.html", "Header 2"],
+              ["header-03.html", "Header 3"],
+              ["header-04.html", "Header 4"],
+              ["header-05.html", "Header 5"],
+              ["header-06.html", "Header 6"],
+              ["header-lp-01.html", "Header LP 1"],
+              ["header-lp-02.html", "Header LP 2"]
+            ]
+          },
+          {
+            "label": "Choose your landing pages header",
+            "name": "default_header_lp",
+            "type": "choice",
+            "default": "header-lp-01.html",
+            "required": true,
+            "choices": [
+              ["header-lp-01.html", "Header LP 1 (recommended)"],
+              ["header-lp-02.html", "Header LP 2 (recommended)"],
+              ["header-01.html", "Header 1"],
+              ["header-02.html", "Header 2"],
+              ["header-03.html", "Header 3"],
+              ["header-04.html", "Header 4"],
+              ["header-05.html", "Header 5"],
+              ["header-06.html", "Header 6"]
+            ]
+          },
+          {
+            "id": "sticky_header",
+            "label": "Sticky header",
+            "name": "sticky_header",
+            "type": "boolean",
+            "help_text": "Only for non-LP headers",
+            "default": true
+          },
+          {
+            "label": "Header color scheme",
+            "name": "scheme",
+            "type": "choice",
+            "display": "radio",
+            "help_text": "Certain modules in the header have their own color scheme option which may override this global setting. Edit your header to select the proper color scheme for your modules if they are not correctly rendered for this color scheme.",
+            "default": "light",
+            "required": true,
+            "choices": [
+              ["light", "Light"],
+              ["dark", "Dark"]
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Footer",
+        "name": "footer",
+        "type": "group",
+        "children": [
+          {
+            "label": "Choose your website footer",
+            "name": "default_footer",
+            "type": "choice",
+            "default": "footer-11.html",
+            "required": true,
+            "choices": [
+              ["footer-01.html", "Footer 1"],
+              ["footer-02.html", "Footer 2"],
+              ["footer-03.html", "Footer 3"],
+              ["footer-04.html", "Footer 4"],
+              ["footer-05.html", "Footer 5"],
+              ["footer-06.html", "Footer 6"],
+              ["footer-07.html", "Footer 7"],
+              ["footer-08.html", "Footer 8"],
+              ["footer-09.html", "Footer 9"],
+              ["footer-10.html", "Footer 10"],
+              ["footer-11.html", "Footer 11"],
+              ["footer-12.html", "Footer 12"]
+            ]
+          },
+          {
+            "label": "Choose your landing pages footer",
+            "id": "default_footer_lp",
+            "name": "default_footer_lp",
+            "type": "choice",
+            "default": "footer-11.html",
+            "required": true,
+            "choices": [
+              ["footer-01.html", "Footer 1"],
+              ["footer-02.html", "Footer 2"],
+              ["footer-03.html", "Footer 3"],
+              ["footer-04.html", "Footer 4"],
+              ["footer-05.html", "Footer 5"],
+              ["footer-06.html", "Footer 6"],
+              ["footer-07.html", "Footer 7"],
+              ["footer-08.html", "Footer 8"],
+              ["footer-09.html", "Footer 9"],
+              ["footer-10.html", "Footer 10"],
+              ["footer-11.html", "Footer 11"],
+              ["footer-12.html", "Footer 12"]
+            ]
+          },
+          {
+            "label": "Footer color scheme",
+            "name": "scheme",
+            "type": "choice",
+            "help_text": "Certain modules in the footer have their own color scheme option which may override this global setting. Edit your footer to select the proper color scheme for your modules if they are not correctly rendered for this color scheme.",
+            "default": "light",
+            "required": true,
+            "display": "radio",
+            "choices": [
+              ["light", "Light"],
+              ["dark", "Dark"],
+              ["dark-green", "Dark Green"]
+            ]
+          }
+        ]
+      },
+      {
+        "label": "UI icon size (px)",
+        "name": "ui_icon_size",
+        "type": "number",
+        "display": "slider",
+        "min": 10,
+        "max": 40,
+        "default": 20,
+        "required": true
+      }
+    ]
+  },
+  {
+    "label": "Miscellaneous",
+    "name": "miscellaneous",
+    "type": "group",
+    "children": [
+      {
+        "label": "Ghost blur",
+        "name": "ghost_blur",
+        "id": "ghost_blur",
+        "type": "boolean",
+        "inline_help_text": "Applies a background blur effect to elements styled with the 'Ghost' style option, such as Buttons and Cards, enhancing their visual appearance.",
+        "help_text": "There may be elements that are not specifically referred to as 'Ghost', but they use this styling. The blur effect will also apply to those elements as well.",
+        "default": true
+      },
+      {
+        "label": "Ghost blur amount",
+        "name": "ghost_blur_amount",
+        "display": "text",
+        "step": 1,
+        "type": "number",
+        "min": 0,
+        "suffix": "px",
+        "inline_help_text": "Use this to adjust the blur intensity. Increasing the value intensifies the blur effect, creating a smoother and more visually appealing background behind the elements.",
+        "default": 24,
+        "visibility": {
+          "controlling_field": "ghost_blur",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL"
+        }
+      },
+      {
+        "label": "RTL-ready",
+        "name": "rtl_ready",
+        "type": "boolean",
+        "default": false,
+        "inline_help_text": "Enable this if you are going to use an RTL language, otherwise, leave it unchecked."
+      }
+    ]
+  }
+]
