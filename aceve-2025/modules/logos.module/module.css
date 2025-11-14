@@ -1,0 +1,8 @@
+.logos--grayscale .logos__logo__img img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logos--grayscale .logos__logo__img img:hover {
+  filter: grayscale(0%);
+}

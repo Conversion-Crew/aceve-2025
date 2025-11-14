@@ -1,0 +1,1209 @@
+[ {
+  "id" : "items",
+  "name" : "items",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "items.internal_name",
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "items.internal_name",
+    "name" : "internal_name",
+    "label" : "Internal name",
+    "help_text" : "Internal name used for organization",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Logo"
+  }, {
+    "id" : "items.image",
+    "name" : "image",
+    "label" : "Image",
+    "help_text" : "",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/HubSpot_Logo.svg",
+      "alt" : "HubSpot_Logo",
+      "width" : 96,
+      "height" : 28,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "items.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "items.link_onclick",
+    "name" : "link_onclick",
+    "label" : "Link onclick",
+    "help_text" : "Execute a JavaScript when this link is clicked (advanced).",
+    "inline_help_text" : "",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "e.g. go_to_tab('tab2')",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "items.link_class",
+    "name" : "link_class",
+    "label" : "Link class",
+    "inline_help_text" : "Multiple classes can be separated by white spaces.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "^(?![0-9])(?!.*\\s[0-9])[\\w\\-\\s]*$",
+    "placeholder" : "e.g. class-1 class-2 class-3",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "internal_name" : "HubSpot",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/HubSpot_Logo.svg",
+      "alt" : "HubSpot logo",
+      "width" : 96,
+      "height" : 28,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "internal_name" : "Spotify",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/Spotify_Logo.svg",
+      "alt" : "Spotify logo",
+      "width" : 114,
+      "height" : 34,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "internal_name" : "GrowthHub",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/GrowthHub_Logo.svg",
+      "alt" : "GrowthHub logo",
+      "width" : 132,
+      "height" : 26,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "internal_name" : "Google",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/Google_Logo.svg",
+      "alt" : "Google logo",
+      "width" : 97,
+      "height" : 33,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "internal_name" : "YouTube",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/YouTube_Logo.svg",
+      "alt" : "YouTube logo",
+      "width" : 112,
+      "height" : 25,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "internal_name" : "Sony",
+    "image" : {
+      "size_type" : "exact",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/273774/act3/images/Sony_Logo.svg",
+      "alt" : "Sony logo",
+      "width" : 95,
+      "height" : 17,
+      "loading" : "lazy"
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "settings",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "settings.col",
+    "name" : "col",
+    "label" : "Columns",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "settings.col.lg",
+      "name" : "lg",
+      "label" : "Large screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "1", "1" ], [ "2", "2" ], [ "3", "3" ], [ "4", "4" ], [ "5", "5" ], [ "6", "6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "5"
+    }, {
+      "id" : "settings.col.md",
+      "name" : "md",
+      "label" : "Medium screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "1", "1" ], [ "2", "2" ], [ "3", "3" ], [ "4", "4" ], [ "5", "5" ], [ "6", "6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "4"
+    }, {
+      "id" : "settings.col.sm",
+      "name" : "sm",
+      "label" : "Small screens",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "1", "1" ], [ "2", "2" ], [ "3", "3" ], [ "4", "4" ], [ "5", "5" ], [ "6", "6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "2"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "lg" : "5",
+      "md" : "4",
+      "sm" : "2"
+    }
+  }, {
+    "id" : "settings.col_align",
+    "name" : "col_align",
+    "label" : "Columns alignment",
+    "inline_help_text" : "For rows with fewer items",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "settings.slider",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "justify-start", "Left" ], [ "justify-center", "Center" ], [ "justify-end", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "justify-center"
+  }, {
+    "id" : "settings.logo_vertical_padding",
+    "name" : "logo_vertical_padding",
+    "label" : "Logo vertical padding",
+    "inline_help_text" : "Set in pixels",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "^[0-9]+$",
+    "visibility" : {
+      "controlling_field" : "settings.slider",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "settings.slider",
+    "name" : "slider",
+    "label" : "Slider",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "settings.slider_settings",
+    "name" : "slider_settings",
+    "label" : "Slider settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "settings.slider",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "settings.slider_settings.autoplay",
+      "name" : "autoplay",
+      "label" : "Autoplay",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "settings.slider_settings.interval",
+      "name" : "interval",
+      "label" : "Autoplay interval",
+      "required" : true,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "settings.slider_settings.autoplay",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "text",
+      "min" : 500,
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 5000
+    }, {
+      "id" : "settings.slider_settings.speed",
+      "name" : "speed",
+      "label" : "Animation speed",
+      "required" : true,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 400
+    }, {
+      "id" : "settings.slider_settings.pauseonhover",
+      "name" : "pauseonhover",
+      "label" : "Pause on hover",
+      "help_text" : "",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    }, {
+      "id" : "settings.slider_settings.arrows",
+      "name" : "arrows",
+      "label" : "Arrows",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "settings.slider_settings.arrows.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : true
+      }, {
+        "id" : "settings.slider_settings.arrows.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : true
+      }, {
+        "id" : "settings.slider_settings.arrows.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : true
+      }, {
+        "id" : "settings.slider_settings.arrows.white",
+        "name" : "white",
+        "label" : "White arrows",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : true,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "lg" : true,
+        "md" : true,
+        "sm" : true,
+        "white" : false
+      }
+    }, {
+      "id" : "settings.slider_settings.dots",
+      "name" : "dots",
+      "label" : "Dots",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "settings.slider_settings.dots.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "settings.slider_settings.dots.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "settings.slider_settings.dots.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "settings.slider_settings.dots.white",
+        "name" : "white",
+        "label" : "White dots",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : true,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "lg" : false,
+        "md" : false,
+        "sm" : false,
+        "white" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "autoplay" : true,
+      "interval" : 5000,
+      "speed" : 400,
+      "pauseonhover" : true,
+      "arrows" : {
+        "lg" : true,
+        "md" : true,
+        "sm" : true,
+        "white" : false
+      },
+      "dots" : {
+        "lg" : false,
+        "md" : false,
+        "sm" : false,
+        "white" : false
+      }
+    }
+  }, {
+    "id" : "48d2ef0f-604b-6ebe-2c80-d21e4bb5966a",
+    "name" : "gray_images",
+    "label" : "Gray images",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "col" : {
+      "lg" : "5",
+      "md" : "4",
+      "sm" : "2"
+    },
+    "col_align" : "justify-center",
+    "slider" : true,
+    "slider_settings" : {
+      "autoplay" : true,
+      "interval" : 5000,
+      "speed" : 400,
+      "pauseonhover" : true,
+      "arrows" : {
+        "lg" : true,
+        "md" : true,
+        "sm" : true,
+        "white" : false
+      },
+      "dots" : {
+        "lg" : false,
+        "md" : false,
+        "sm" : false,
+        "white" : false
+      }
+    },
+    "gray_images" : true
+  }
+}, {
+  "id" : "wrapper",
+  "name" : "wrapper",
+  "label" : "Wrapper",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "wrapper.max_width",
+    "name" : "max_width",
+    "label" : "Maximum width",
+    "inline_help_text" : "Set in pixels",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.max_width.lg",
+      "name" : "lg",
+      "label" : "Large screens",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "^[0-9]+$",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "wrapper.max_width.md",
+      "name" : "md",
+      "label" : "Medium screens",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "^[0-9]+$",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "wrapper.max_width.sm",
+      "name" : "sm",
+      "label" : "Small screens",
+      "inline_help_text" : "",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "^[0-9]+$",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "wrapper.block_align",
+    "name" : "block_align",
+    "label" : "Block alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.block_align.lg",
+      "name" : "lg",
+      "label" : "Large screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : ""
+    }, {
+      "id" : "wrapper.block_align.md",
+      "name" : "md",
+      "label" : "Medium screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "wrapper.block_align.sm",
+      "name" : "sm",
+      "label" : "Small screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "lg" : ""
+    }
+  }, {
+    "id" : "wrapper.text_align",
+    "name" : "text_align",
+    "label" : "Text alignment",
+    "inline_help_text" : "Text and inline elements alignment. This will not affect elements that have their own text alignment defined.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.text_align.lg",
+      "name" : "lg",
+      "label" : "Large screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "center"
+    }, {
+      "id" : "wrapper.text_align.md",
+      "name" : "md",
+      "label" : "Medium screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "wrapper.text_align.sm",
+      "name" : "sm",
+      "label" : "Small screens",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Unspecified",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "lg" : "center"
+    }
+  }, {
+    "id" : "wrapper.padding",
+    "name" : "padding",
+    "label" : "Padding",
+    "inline_help_text" : "Set in pixels",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.padding.top",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.padding.top.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.top.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.top.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.padding.bottom",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.padding.bottom.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.bottom.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.bottom.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.padding.left",
+      "name" : "left",
+      "label" : "Left",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.padding.left.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.left.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.left.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.padding.right",
+      "name" : "right",
+      "label" : "Right",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.padding.right.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.right.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.padding.right.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "inline_help_text" : "",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : { },
+      "bottom" : { },
+      "left" : { },
+      "right" : { }
+    }
+  }, {
+    "id" : "wrapper.margin",
+    "name" : "margin",
+    "label" : "Margin",
+    "inline_help_text" : "Set in pixels",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.margin.top",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.margin.top.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.top.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.top.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.margin.bottom",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.margin.bottom.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.bottom.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.bottom.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.margin.left",
+      "name" : "left",
+      "label" : "Left",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.margin.left.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.left.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.left.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "wrapper.margin.right",
+      "name" : "right",
+      "label" : "Right",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "wrapper.margin.right.lg",
+        "name" : "lg",
+        "label" : "Large screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.right.md",
+        "name" : "md",
+        "label" : "Medium screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      }, {
+        "id" : "wrapper.margin.right.sm",
+        "name" : "sm",
+        "label" : "Small screens",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "^[+-]?[0-9]+$",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : { },
+      "bottom" : { },
+      "left" : { },
+      "right" : { }
+    }
+  }, {
+    "id" : "wrapper.identifiers",
+    "name" : "identifiers",
+    "label" : "Identifiers",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "wrapper.identifiers.custom_id",
+      "name" : "custom_id",
+      "label" : "Custom ID",
+      "help_text" : "IDs are case sensitive: <b>camelCase</b> is not the same as <b> CamelCase</b>",
+      "inline_help_text" : "Must be unique per page.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "^[A-Za-z]+[\\w\\-\\:\\.]*$",
+      "placeholder" : "e.g. my-custom-element-1",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "wrapper.identifiers.custom_class",
+      "name" : "custom_class",
+      "label" : "Custom class",
+      "help_text" : "Class names are case sensitive: <b>today</b> is not the same as <b>Today</b>",
+      "inline_help_text" : "Multiple classes can be separated by white spaces.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "^(?![0-9])(?!.*\\s[0-9])[\\w\\-\\s]*$",
+      "placeholder" : "e.g. class-1 class-2 class-3",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "max_width" : { },
+    "block_align" : {
+      "lg" : ""
+    },
+    "text_align" : {
+      "lg" : "center"
+    },
+    "padding" : {
+      "top" : { },
+      "bottom" : { },
+      "left" : { },
+      "right" : { }
+    },
+    "margin" : {
+      "top" : { },
+      "bottom" : { },
+      "left" : { },
+      "right" : { }
+    },
+    "identifiers" : { }
+  }
+} ]

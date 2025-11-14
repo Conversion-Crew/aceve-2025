@@ -1,0 +1,20 @@
+{
+  "content_tags" : [ {
+    "name" : "BRANDING",
+    "source" : "USER"
+  }, {
+    "name" : "GALLERY",
+    "source" : "USER"
+  }, {
+    "name" : "LOGO",
+    "source" : "USER"
+  } ],
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "categories" : [ "DESIGN", "MEDIA" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 199730732099,
+  "label" : "Logos",
+  "icon" : "../../images/module-icons/logos.svg",
+  "is_available_for_new_content" : true
+}

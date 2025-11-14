@@ -1,0 +1,134 @@
+{{ require_css(get_asset_url('../../css/components/logos.css')) }}
+{% from '../../css/_variables.css' import sm, md, gutter, rtl_ready %}
+{% from '../../macros/utility.html' import module_open_tag, module_close_tag, image_tag, link_open_tag, link_close_tag %}
+{% set module_id = name|replace("module_", "")|replace("widget_", "") %}
+
+{% set render_lg_col = "s" ~ (12 / module.settings.col.lg|int)|round(0) %}
+{% set render_md_col = "md-s" ~ (12 / module.settings.col.md|int)|round(0) %}
+{% set render_sm_col = "sm-s" ~ (12 / module.settings.col.sm|int)|round(0) %}
+{% if module.settings.col.lg == "5" %}{% set render_lg_col = "eq5" %}{% endif %}
+{% if module.settings.col.md == "5" %}{% set render_md_col = "md-eq5" %}{% endif %}
+{% if module.settings.col.sm == "5" %}{% set render_sm_col = "sm-eq5" %}{% endif %}
+
+{% if module.settings.slider && module.items|length > 1 %}
+  {% set slider = true %}
+  {{ require_css(get_asset_url("../../css/components/splide.css")) }}
+  {{ require_js(get_asset_url("../../js/components/splide.js"), "footer") }}
+{% elif module.items|length > 1 %}
+  {% set columns = true %}
+{% endif %}
+
+{{ module_open_tag(module_id, "logos", module.wrapper) }}
+  <div class="logos {% if module.settings.gray_images %} logos--grayscale  {% endif %}">
+    {% if slider %}
+      {# Slider #}
+      <div id="splide_{{ module_id }}" class="splide splide--arrows-outside splide--dots-below{% if module.settings.slider_settings.arrows.lg %} splide--arrows-lg{% endif %}{% if module.settings.slider_settings.arrows.md %} splide--arrows-md{% endif %}{% if module.settings.slider_settings.arrows.sm %} splide--arrows-sm{% endif %}{% if module.settings.slider_settings.arrows.white %} splide--white-arrows{% endif %}{% if module.settings.slider_settings.dots.lg %} splide--dots-lg{% endif %}{% if module.settings.slider_settings.dots.md %} splide--dots-md{% endif %}{% if module.settings.slider_settings.dots.sm %} splide--dots-sm{% endif %}{% if module.settings.slider_settings.dots.white %} splide--white-dots{% endif %} splide--lg-{{ module.settings.col.lg }} splide--md-{{ module.settings.col.md }} splide--sm-{{ module.settings.col.sm }}" data-splide='{
+        "autoplay": {{ module.settings.slider_settings.autoplay }},
+        "interval": {{ module.settings.slider_settings.interval|default(5000) }},
+        "speed": {{ module.settings.slider_settings.speed|default(400) }},
+        "pauseOnHover": {{ 'true' if module.settings.slider_settings.pauseonhover else 'false' }},
+        "updateOnMove": true,
+        {% if module.settings.slider_settings.dots.lg %}
+          "pagination": true,
+        {% else %}
+          "pagination": false,
+        {% endif %}
+        "type": "loop",
+        "start": 0,
+        {% if module.settings.slider_settings.arrows.lg or module.settings.slider_settings.arrows.md or module.settings.slider_settings.arrows.sm %}"arrows": true,{% endif %}
+        "perPage": {{ module.settings.col.lg }},
+        "perMove": 1,
+        "gap": {{ gutter }},
+        {% if rtl_ready and content.language.textDirection.value == 'rtl' %}
+          "direction": "rtl",
+        {% endif %}
+        "breakpoints": {
+          "{{ md }}": {
+            {% if module.settings.slider_settings.dots.md %}
+              "pagination": true,
+            {% else %}
+              "pagination": false,
+            {% endif %}
+            "perPage": {{ module.settings.col.md }}
+          },
+          "{{ sm }}": {
+            {% if module.settings.slider_settings.dots.sm %}
+              "pagination": true,
+            {% else %}
+              "pagination": false,
+            {% endif %}
+            "focus": false,
+            "perPage": {{ module.settings.col.sm }}
+          }
+        }
+      }'>
+        {% if module.settings.slider_settings.arrows %}
+          {# Arrows #}
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              {% if rtl_ready and content.language.textDirection.value == 'rtl' %}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.32218 2.32544C6.75176 1.89152 7.44824 1.89152 7.87782 2.32544L17.6778 11.2143C18.1074 11.6482 18.1074 12.3518 17.6778 12.7857L7.87782 21.6746C7.44824 22.1085 6.75176 22.1085 6.32218 21.6746C5.89261 21.2406 5.89261 20.5371 6.32218 20.1032L15.3444 12L6.32218 3.89679C5.89261 3.46287 5.89261 2.75935 6.32218 2.32544Z" fill="currentColor"/>
+                </svg>
+              {% else %}
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6778 2.32544C17.2482 1.89152 16.5518 1.89152 16.1222 2.32544L6.32219 11.2143C5.89261 11.6482 5.89261 12.3518 6.32219 12.7857L16.1222 21.6746C16.5518 22.1085 17.2482 22.1085 17.6778 21.6746C18.1074 21.2406 18.1074 20.5371 17.6778 20.1032L8.65564 12L17.6778 3.89679C18.1074 3.46287 18.1074 2.75935 17.6778 2.32544Z" fill="currentColor"/>
+                </svg>
+              {% endif %}
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              {% if rtl_ready and content.language.textDirection.value == 'rtl' %}
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6778 2.32544C17.2482 1.89152 16.5518 1.89152 16.1222 2.32544L6.32219 11.2143C5.89261 11.6482 5.89261 12.3518 6.32219 12.7857L16.1222 21.6746C16.5518 22.1085 17.2482 22.1085 17.6778 21.6746C18.1074 21.2406 18.1074 20.5371 17.6778 20.1032L8.65564 12L17.6778 3.89679C18.1074 3.46287 18.1074 2.75935 17.6778 2.32544Z" fill="currentColor"/>
+                </svg>
+              {% else %}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.32218 2.32544C6.75176 1.89152 7.44824 1.89152 7.87782 2.32544L17.6778 11.2143C18.1074 11.6482 18.1074 12.3518 17.6778 12.7857L7.87782 21.6746C7.44824 22.1085 6.75176 22.1085 6.32218 21.6746C5.89261 21.2406 5.89261 20.5371 6.32218 20.1032L15.3444 12L6.32218 3.89679C5.89261 3.46287 5.89261 2.75935 6.32218 2.32544Z" fill="currentColor"/>
+                </svg>
+              {% endif %}
+            </button>
+          </div>
+        {% endif %}
+        {# Track #}
+        <div class="splide__track">
+          {# Slides #}
+          <div class="splide__list">
+    {% elif columns %}
+      {# Row #}
+      <div class="row items-center {{ module.settings.col_align }}">
+    {% endif %}
+    {% for item in module.items %}
+      {% if slider %}
+        {# Slide #}
+        <div class="splide__slide">
+      {% elif columns %}
+        {# Col #}
+        <div class="col {{ render_lg_col }} {{ render_md_col }} {{ render_sm_col }}"{% if module.settings.logo_vertical_padding %} style="padding-top: {{ module.settings.logo_vertical_padding }}px; padding-bottom: {{ module.settings.logo_vertical_padding }}px;"{% endif %}>
+      {% endif %}
+      
+      {# --- COMPONENT --- #}
+      
+      <div class="logos__logo">
+        <div class="logos__logo__img">
+          {{ link_open_tag(item.link, item.link_class, item.link_onclick) }}
+            {{ image_tag(item.image) }}
+          {{ link_close_tag(item.link) }}
+        </div>
+      </div>
+      
+      {# --- END COMPONENT --- #}
+      
+      {% if slider || columns %}
+        </div>{# End Slide/Col #}
+      {% endif %}
+    {% endfor %}
+    
+    {% if columns %}
+      </div>{# End Row #}
+    {% elif slider %}
+          </div>{# End Slides #}
+        </div>{# End Track #}
+      </div>{# End Slider #}
+    {% endif %}
+  </div>
+{{ module_close_tag() }}
